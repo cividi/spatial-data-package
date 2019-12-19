@@ -1,0 +1,2 @@
+process/*.gpkg filter=lfs diff=lfs merge=lfs -text
+data/grid* filter=lfs diff=lfs merge=lfs -text

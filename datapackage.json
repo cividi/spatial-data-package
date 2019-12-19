@@ -1,0 +1,80 @@
+{
+  "name": "gemeindescan-sample",
+  "title": "Gemeindescan Sample",
+  "keywords": ["europe","switzerland","gemeindescan","geodata"],
+  "format": "geojson",
+  "datapackage_version": "1.0.0",
+  "cividi_version": "0.1",
+  "last_modified": "2019-12-12",
+  "version":"1.0.0",
+  "license": "ODC-By-1.0",
+  "licenses": [
+    {
+      "type": "ODC-By-1.0",
+      "url": "https://opendatacommons.org/licenses/by/1.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "swissBOUNDARIES3D municipal boundaries",
+      "url": "https://opendata.swiss/en/dataset/swissboundaries3d-gemeindegrenzen"
+    }
+  ],
+  "resources": [
+    {
+      "path": "data/perimeter.csv",
+      "title": "Perimeter",
+      "description": "",
+      "mediatype":"text/csv",
+      "encoding":"utf-8",
+      "name": "perimeter-csv",
+      "schema": {
+        "fields":
+        [
+          {"name":"uuid","type":"string","format":"uuid","required":true},
+          {"name":"name","type":"string","format":"default"},
+          {"name":"objektart","type":"string","format":"default","enum":["cycling","Neighbour","Perimeter"]},
+          {"name":"herkunft","type":"string","format":"default","enum":["ORS","QGIS","manual","AV","swisstopo"]},
+          {"name":"herkunft_j","type":"year","format":"default"},
+          {"name":"herkunft_m","type":"integer","format":"default","minimum":1,"maximum":12},
+          {"name":"bfs_nummer","type":"integer","format":"default","minimum":1},
+          {"name":"bezirksnummer","type":"integer","format":"default","minimum":1},
+          {"name":"kantonsnummer","type":"integer","format":"default","minimum":1},
+          {"name":"icc","type":"string","format":"default","enum":["CH","LI"]}
+        ]
+      }
+    },
+    {
+      "path": "data/perimeter.geojson",
+      "title": "Perimeter",
+      "description": "",
+      "mediatype":"application/vnd.geo+json",
+      "name": "perimeter-geojson"
+    }
+  ],
+  "views":[{
+      "name": "preview-gemeindescan",
+      "resources": [
+        "grid-buffered-geojson"
+      ],
+      "specType": "map",
+      "transform": {
+         "zoom": 9,
+         "lat": 7.987392661467789,
+         "lon": 47.045066133024953
+      }
+  }],
+  "contributors":[{
+    "title": "cividi",
+    "email": "info@cividi.ch",
+    "web": "http://cividi.ch",
+    "role": "publisher"
+  }],
+  "maintainers":[{
+    "name": "Thorben Westerhuys",
+    "web": "https://github.com/n0rdlicht/"
+  },{
+    "name": "Oleg Lavrovsky",
+    "web": "https://github.com/loleg/"
+  }]
+}
