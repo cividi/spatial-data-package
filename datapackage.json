@@ -8871,17 +8871,19 @@
     }
   ],
   "views":[{
-      "name": "preview-gemeindescan",
+      "name": "mapview",
       "resources": [
         "gemeinden-geojson",
         "mb-bg-map"
       ],
       "specType": "map",
-      "transform": {
-         "zoom": 14,
-         "lat": 9.389791488647461,
-         "lon": 47.45989767565368
-      }
+      "bounds": [
+        "geo:9.355459213256836,47.43668029143545",
+        "geo:9.424123764038086,47.483104811626674"
+      ],
+      "dimensions": [
+        800,800
+      ]
   }],
   "contributors":[{
     "title": "cividi",
