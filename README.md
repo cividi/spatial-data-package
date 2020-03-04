@@ -46,9 +46,10 @@ For a map view compatible with the [Gemeindescan-Project](https://bitbucket.org/
         "geo:47.483104811626674,9.424123764038086"
     ],
     "legend": [{
-      "shape": "square", // possible shapes: square, circle, line
-      "size": 0.5, // 0.1 - 1
-      "color": "rgba(255,255,255,0.5)",
+      "shape": "square",
+      "size": 0.5,
+      "color": "#fff",
+      "opacity": 0.2,
       "label": "Legend text",
       "primary": true
     }]
@@ -59,7 +60,17 @@ For a map view compatible with the [Gemeindescan-Project](https://bitbucket.org/
 - `name`: name of the view (unique within datapackage)
 - `resources`: an array of resource-names (see above) in order of rendering, first will be lowest in render order
 - `specType`: currently only `map` is supported here
-- `bounds`: array of bounding box support geopoints, denoted as Geo-URI as defined by [RFC5870](https://tools.ietf.org/html/rfc5870), latitude first
+- `spec`: Metainformation to render a full map view
+  - `title`: Title of the View
+  - `description`: Description of the View 
+  - `bounds`: array of bounding box support geopoints, denoted as Geo-URI as defined by [RFC5870](https://tools.ietf.org/html/rfc5870), latitude first
+  - `legend`: Legend entries for the view
+    - `shape`: one of square, circle or line
+    - `size`: relative size in percent, either size of the sqaure or circle or line thickness
+    - `color`: fill/main color
+    - `opacity`: opacity value
+    - `label`: legend entry text
+    - `primary`: can be used for simplifying the legend to less elements in size constraint contexts
 
 ### Contributors and Maintainers
 
