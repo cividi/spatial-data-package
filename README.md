@@ -11,11 +11,11 @@ This datapackage follows the [Frictionless Data Specification](https://frictionl
 - `Licenses:` Defines the details of the licenses
 - `Sources`: Sources that have been used as input
 
-### Rersources
+### Resources
 
 An array of resources with links to or the data itself. Includes a resource `name` (unique inside the datapackage), a `title` and a `description` as well as a `mediatype`. At least one of these should be a geojson or of some other spatial type.
 
-Mögliche Mediatypes
+Possible Mediatypes
 
 - `application/geo+json`: GeoJSON with [Mapbox Simple Styles](https://github.com/mapbox/simplestyle-spec)
 - `application/vnd.simplestyle-extended`: GeoJSON with [Extended Simple Styles](https://github.com/cividitech/simplestyle-extended-spec)
