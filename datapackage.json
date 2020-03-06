@@ -8888,6 +8888,7 @@
             "spec": {
                 "title": "Snapshot Title",
                 "description": "Snapshot description",
+                "attribution": "Analysis: cividi, Data: Swisstopo",
                 "bounds": [
                     "geo:47.43668029143545,9.355459213256836",
                     "geo:47.483104811626674,9.424123764038086"
