@@ -8881,12 +8881,13 @@
             "name": "mapview",
             "resources": [
                 "gemeinden-geojson",
-                "mapbox-background"
+                "mapbox-background",
+                "circle-layer"
             ],
             "specType": "gemeindescanSnapshot",
             "spec": {
-                "title": "",
-                "description": "",
+                "title": "Snapshot Title",
+                "description": "Snapshot description",
                 "bounds": [
                     "geo:47.43668029143545,9.355459213256836",
                     "geo:47.483104811626674,9.424123764038086"
