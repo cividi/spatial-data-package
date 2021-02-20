@@ -138,8 +138,7 @@
                                         },
                                         "strokeWidth": {
                                             "type": "number",
-                                            "minimum": 0,
-                                            "maximum": 1
+                                            "minimum": 0
                                         }
                                     }
                                 }
