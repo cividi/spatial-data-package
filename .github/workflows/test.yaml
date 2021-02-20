@@ -16,4 +16,8 @@ jobs:
         run: |
           npm install
       - name: Validate Data Package and Schema
-        run: npm run test
+        id: validation
+        run: echo "::set-output name=data-validate::$(npm run test)\n"
+      - name: Check for Failure
+        if: ${{ contains('Error',steps.validation.outputs['data-validate']) }}
+        run: exit 1
