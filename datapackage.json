@@ -18,6 +18,7 @@
         {
             "title": "Gemeinden",
             "description": "Gemeinde und Nachbargemeinden",
+            "profile": "https://json.schemastore.org/geojson",
             "mediatype": "application/geo+json",
             "name": "gemeinden-geojson",
             "data": {
@@ -8848,6 +8849,7 @@
         }, {
             "name": "circle-layer",
             "mediatype": "application/vnd.simplestyle-extended",
+            "profile": "https://json.schemastore.org/geojson",
             "data": {
                 "type": "FeatureCollection",
                 "features": [{
@@ -8894,7 +8896,7 @@
                 "legend": [{
                         "label": "Square",
                         "shape": "square",
-                        "primary": true,
+                        "primary": false,
                         "size": 1,
                         "fillColor": "#32b6ca",
                         "fillOpacity": 0.6,

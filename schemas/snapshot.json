@@ -159,6 +159,9 @@
                                 "pattern": "^application\/geo\\+json$"
                             },
                             "data": {
+                                "allOf": [{
+                                    "$ref": "https://json.schemastore.org/geojson"
+                                }],
                                 "type": "object",
                                 "properties": {
                                     "features": {
@@ -225,6 +228,9 @@
                                 "pattern": "^application\/vnd\\.simplestyle-extended$"
                             },
                             "data": {
+                                "allOf": [{
+                                    "$ref": "https://json.schemastore.org/geojson"
+                                }],
                                 "type": "object",
                                 "properties": {
                                     "features": {
@@ -268,6 +274,10 @@
                     }
                 ]
             }
+        },
+        "sources": {
+            "type": "array",
+            "minItems": 1
         }
     }
 }
