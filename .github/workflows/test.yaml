@@ -18,8 +18,15 @@ jobs:
         run: |
           npm install
       - name: Validate Data Package and Schema
+        shell: "bash"
         id: validation
-        run: echo "::set-output name=data-validate::$(npm run test)\n"
+        run: |
+          out=$(npm run test)
+          out="${out//'%'/'%25'}"
+          out="${out//$'\n'/'%0A'}"
+          out="${out//$'\r'/'%0D'}"
+          echo $out
+          echo "::set-output name=data-validate::$out\n"
       - name: Check for Failure
         if: contains(steps.validation.outputs.data-validate,'Error')
         env:
