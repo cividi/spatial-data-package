@@ -2,7 +2,7 @@
     "name": "gemeindescan-snapshot-sample",
     "title": "Gemeindescan Snapshot Sample",
     "keywords": ["europe", "switzerland", "gemeindescan", "geodata"],
-    "profile": "https://raw.githubusercontent.com/cividi/spatial-data-package-spec/fix-json-schema/schemas/snapshot.json",
+    "profile": "https://raw.githubusercontent.com/cividi/spatial-data-package-spec/main/schemas/snapshot.json",
     "description": "",
     "last_modified": "2021-02-20",
     "license": "ODC-By-1.0",

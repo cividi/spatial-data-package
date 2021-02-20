@@ -31,29 +31,68 @@ For a map view compatible with the [Gemeindescan-Project](https://bitbucket.org/
 
 ```json
 {
-  "name": "mapview",
-  "resources": [
-      "geojson-resource-name-1",
-      "geojson-resource-name-2",
-      "mapbox-resource-name"
+  "name": "package-name",
+  "profile": "https://raw.githubusercontent.com/cividi/spatial-data-package-spec/main/schemas/snapshot.json",
+  "views":[
+    {
+      "name": "mapview",
+      "resources": [
+          "geojson-resource-name-1",
+          "mapbox-resource-name"
+      ],
+      "specType": "gemeindescanSnapshot",
+      "spec": {
+        "title": "Snapshot Title",
+        "description": "Snapshot Description",
+        "bounds": [
+            "geo:47.43668029143545,9.355459213256836",
+            "geo:47.483104811626674,9.424123764038086"
+        ],
+        "legend": [{
+          "label": "Legend text",
+          "shape": "square",
+          "size": 0.5,
+          "primary": true,
+          "fillColor": "#ffffff",
+          "fillOpacity": 0.2,
+          "strokeColor": "#000000",
+          "strokeOpacity": 1,
+          "strokeWidth": 1
+        }]
+      }
+    }
   ],
-  "specType": "gemeindescanSnapshot",
-  "spec": {
-    "title": "Snapshot Title",
-    "description": "Snapshot Description",
-    "bounds": [
-        "geo:47.43668029143545,9.355459213256836",
-        "geo:47.483104811626674,9.424123764038086"
-    ],
-    "legend": [{
-      "shape": "square",
-      "size": 0.5,
-      "color": "#fff",
-      "opacity": 0.2,
-      "label": "Legend text",
-      "primary": true
-    }]
-  }
+  "resources":[
+    {
+      "name": "geojson-resource-name-1",
+      "mediatype": "application/vnd.simplestyle-extended",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [9.38771, 47.46058]
+          },
+          "properties": {
+            "fid": 1,
+            "radius": 200,
+            "fillColor": "red",
+            "fillOpacity": 0.2,
+            "title": "Centerpoint",
+            "color": "red",
+            "weight": 1,
+            "opacity": 0.8
+          }
+        }]
+      }
+    },
+    {
+      "path": "mapbox://styles/gemeindescan/ckc4sha4310d21iszp8ri17u2",
+      "mediatype": "application/vnd.mapbox-vector-tile",
+      "name": "mapbox-resource-name"
+    }
+  ]
 }
 ```
 
