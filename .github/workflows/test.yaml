@@ -1,0 +1,36 @@
+name: Validate Data Package and Schema
+
+on:
+  push:
+  pull_request:
+
+  repository_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - name: Install data-cli
+        run: |
+          npm install
+      - name: Validate Data Package and Schema
+        shell: "bash"
+        id: validation
+        run: |
+          out=$(npm run test)
+          out="${out//'%'/'%25'}"
+          out="${out//$'\n'/'%0A'}"
+          out="${out//$'\r'/'%0D'}"
+          echo $out
+          echo "::set-output name=data-validate::$out\n"
+      - name: Check for Failure
+        if: contains(steps.validation.outputs.data-validate,'Error')
+        env:
+          OUTPUT: ${{ steps.validation.outputs.data-validate }}
+        run: |
+          echo $OUTPUT
+          exit 1

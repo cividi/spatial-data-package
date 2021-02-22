@@ -1,0 +1,21 @@
+{
+  "name": "spatial-data-package-spec",
+  "version": "1.0.0",
+  "description": "This is an example Geospatial Data Package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "data validate ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cividi/spatial-data-package-spec.git"
+  },
+  "author": "cividi GmbH",
+  "bugs": {
+    "url": "https://github.com/cividi/spatial-data-package-spec/issues"
+  },
+  "homepage": "https://github.com/cividi/spatial-data-package-spec#readme",
+  "dependencies": {
+    "data-cli": "^0.10.1"
+  }
+}

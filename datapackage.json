@@ -2,12 +2,9 @@
     "name": "gemeindescan-snapshot-sample",
     "title": "Gemeindescan Snapshot Sample",
     "keywords": ["europe", "switzerland", "gemeindescan", "geodata"],
-    "format": "geojson",
+    "profile": "https://raw.githubusercontent.com/cividi/spatial-data-package-spec/main/schemas/snapshot.json",
     "description": "",
-    "datapackage_version": "1.0.0",
-    "gemeindescan_version": "0.2",
-    "last_modified": "2020-02-17",
-    "version": "1.0.0",
+    "last_modified": "2021-02-20",
     "license": "ODC-By-1.0",
     "licenses": [{
         "type": "ODC-By-1.0",
@@ -17,9 +14,11 @@
         "title": "swissBOUNDARIES3D municipal boundaries",
         "url": "https://opendata.swiss/en/dataset/swissboundaries3d-gemeindegrenzen"
     }],
-    "resources": [{
+    "resources": [
+        {
             "title": "Gemeinden",
             "description": "Gemeinde und Nachbargemeinden",
+            "profile": "https://json.schemastore.org/geojson",
             "mediatype": "application/geo+json",
             "name": "gemeinden-geojson",
             "data": {
@@ -8850,6 +8849,7 @@
         }, {
             "name": "circle-layer",
             "mediatype": "application/vnd.simplestyle-extended",
+            "profile": "https://json.schemastore.org/geojson",
             "data": {
                 "type": "FeatureCollection",
                 "features": [{
@@ -8861,18 +8861,18 @@
                     "properties": {
                         "fid": 1,
                         "radius": 200,
-                        "fill": "red",
-                        "fill-opacity": 0.2,
+                        "fillColor": "red",
+                        "fillOpacity": 0.2,
                         "title": "Centerpoint",
-                        "stroke": "red",
-                        "stroke-width": 1,
-                        "stroke-opacity": 0.8
+                        "color": "red",
+                        "weight": 1,
+                        "opacity": 0.8
                     }
                 }]
             }
         },
         {
-            "path": "mapbox://styles/gemeindescan/ck6qnoijj28od1is9u1wbb3vr",
+            "path": "mapbox://styles/gemeindescan/ckc4sha4310d21iszp8ri17u2",
             "mediatype": "application/vnd.mapbox-vector-tile",
             "name": "mapbox-background"
         }
@@ -8894,20 +8894,37 @@
                     "geo:47.483104811626674,9.424123764038086"
                 ],
                 "legend": [{
+                        "label": "Square",
                         "shape": "square",
+                        "primary": false,
                         "size": 1,
-                        "color": "#32b6ca",
-                        "opacity": 1,
-                        "label": "Gemeinde",
-                        "primary": true
+                        "fillColor": "#32b6ca",
+                        "fillOpacity": 0.6,
+                        "strokeColor": "#32b6ca",
+                        "strokeOpacity": 1,
+                        "strokeWidth": 1.5
                     },
                     {
-                        "shape": "square",
+                        "label": "Circle",
+                        "shape": "circle",
+                        "primary": true,
                         "size": 1,
-                        "color": "#6a6a6a",
-                        "opacity": 1,
-                        "label": "Nachbargemeinde",
-                        "primary": true
+                        "fillColor": "#6a6a6a",
+                        "fillOpacity": 0.2,
+                        "strokeColor": "#6a6a6a",
+                        "strokeOpacity": 0.25,
+                        "strokeWidth": 1
+                    },
+                    {
+                        "label": "Line",
+                        "shape": "line",
+                        "primary": true,
+                        "size": 1,
+                        "fillColor": "#000",
+                        "fillOpacity": 0,
+                        "strokeColor": "#000000",
+                        "strokeOpacity": 1,
+                        "strokeWidth": 0.5
                     }
                 ]
             }
