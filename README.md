@@ -39,9 +39,10 @@ a Snapshots (Spatial Data Package) also require (technical details see below)
 1. a `view` – Defining how the map can be rendered
 1. a `source` – Listing data sources
 1. `resource`s added to a `view` to be either
-   - a simple-style GeoJSON – for Lines, Polygons, Markers
-   - a simple-style-extended GeoJSON – for Circles
+   - a simple-style GeoJSON – supporting Lines, Polygons, Markers
+   - a simple-style-extended GeoJSON – supporting Circles
    - a mapbox style URL – for a background map
+   - a [WMS](https://www.ogc.org/standards/wms) layer
 
 ### Examples
 
@@ -56,6 +57,7 @@ Possible Mediatypes
 - `application/geo+json`: GeoJSON with [Mapbox Simple Styles](https://github.com/mapbox/simplestyle-spec)
 - `application/vnd.simplestyle-extended`: GeoJSON with [Extended Simple Styles](https://github.com/cividi/simplestyle-extended-spec)
 - `application/vnd.mapbox-vector-tile`: Mapbox URI for styled vector tiles
+- `application/vnd.wms`: WMS URI and parameters (see example below)
 
 ### Views
 
@@ -121,6 +123,18 @@ For a map view compatible with the [Gemeindescan-Project](https://bitbucket.org/
             "opacity": 0.8
           }
         }]
+      }
+    },
+    {
+      "name": "wms-bauzonen",
+      "title": "Geo Admin: Bauzonen Schweiz (harmonisiert)",
+      "mediatype": "application/vnd.wms",
+      "path": "https://wms.geo.admin.ch",
+      "parameters": {
+        "format": "image/png",
+        "transparent": true,
+        "layers": "ch.are.bauzonen",
+        "opacity": 0.5
       }
     },
     {

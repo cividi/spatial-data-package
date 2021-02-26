@@ -262,6 +262,41 @@
                         }
                     },
                     {
+                        "required": ["name", "path", "mediatype","parameters"],
+                        "description": "A WMS data resource.",
+                        "properties": {
+                            "mediatype": {
+                                "pattern": "^application\/vnd\\.wms$"
+                            },
+                            "parameters": {
+                                "type": "object",
+                                "required": ["format","transparent","layers","opacity"],
+                                "description": "Parameters how to request the WMS layer via Leaflet.",
+                                "properties": {
+                                    "format": {
+                                        "type": "string",
+                                        "pattern": "image\/png",
+                                        "description": "The WMS tile type."
+                                    },
+                                    "transparent": {
+                                        "type": "boolean",
+                                        "description": "If the PNG tiles should support transparency."
+                                    },
+                                    "layers": {
+                                        "type": "string",
+                                        "description": "The WMS layer name."
+                                    },
+                                    "opacity": {
+                                        "description": "Opacity of the layer.",
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 1
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
                         "required": ["name", "path", "mediatype"],
                         "properties": {
                             "mediatype": {
