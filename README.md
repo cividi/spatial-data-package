@@ -63,7 +63,7 @@ An array of rendered versions of the data resources.
 
 Contains extra metadata used for rendering all or a subset of the packages resources.
 
-For a map view compatible with the [Gemeindescan-Project](https://bitbucket.org/cividi/gemeindescan-webui) use the following fields and resources that are either Mapbox Style URI or a geojson that includes styles as defined by the [Simplestyle Spec](https://github.com/mapbox/simplestyle-spec) or [Extended Simplestyle Spec](https://github.com/cividitech/simplestyle-extended-spec).
+For a map view compatible with the [Gemeindescan-Project](https://github.com/cividi/spatial-data-package-platform) use the following fields and resources that are either Mapbox Style URI or a geojson that includes styles as defined by the [Simplestyle Spec](https://github.com/mapbox/simplestyle-spec) or [Extended Simplestyle Spec](https://github.com/cividitech/simplestyle-extended-spec).
 
 ```json
 {
