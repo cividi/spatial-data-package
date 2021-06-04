@@ -4,7 +4,8 @@ A living document for use cases of the Spatial Data Package for different contex
 
 |Software/File Format/Tool |Status |Platform |Impact/Use Case                                      |Reference/Example|
 |---|---|---|---|---|
-|Leaflet                   |MVP    |Web      |Render as interactive web map                        |https://github.com/cividi/spatial-data-package-platform|
+|Leaflet                   |MVP    |Web      |Render as interactive web map                        |https://github.com/cividi/spatial-data-package-platform (Map Viewer Component)|
+|Rasterized Image (.png)   |MVP    |Web      |Render a pixel graphic representation                |https://github.com/cividi/spatial-data-package-platform (Screenshot Service)|
 |QGIS                      |MVP    |Desktop  |Cross platform Desktop GIS                           |https://github.com/cividi/spatial-data-package-export|
 |CSVT <> GeoJSON           |PoC    |-        |File Format conversion via frictionless              |https://github.com/cividi/frictionless-geojson|
 |Cesium                    |Idea   |-        |3D Web-GIS applications                              |-|
