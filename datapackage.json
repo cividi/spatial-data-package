@@ -1,4 +1,5 @@
 {
+    "$schema": "./schemas/snapshot.json",
     "name": "gemeindescan-snapshot-sample",
     "title": "Gemeindescan Snapshot Sample",
     "keywords": ["europe", "switzerland", "gemeindescan", "geodata"],
@@ -8869,6 +8870,18 @@
                         "opacity": 0.8
                     }
                 }]
+            }
+        },
+        {
+            "name": "wms-bauzonen",
+            "title": "Geo Admin: Bauzonen Schweiz (harmonisiert)",
+            "mediatype": "application/vnd.wms",
+            "path": "https://wms.geo.admin.ch",
+            "parameters": {
+                "format": "image/png",
+                "transparent": true,
+                "layers": "ch.are.bauzonen",
+                "opacity": 0.5
             }
         },
         {
